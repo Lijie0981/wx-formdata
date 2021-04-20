@@ -7,10 +7,10 @@ declare global {
 	}
 }
 
-export function randomString(length: number = 17) {
+export function randomString(length = 17) {
 	let res = "";
 	for (let i = 0; i < length; i++) {
-		let n = parseInt(Math.random() * 62 + "", 10);
+		const n = parseInt(Math.random() * 62 + "", 10);
 		if (n <= 9) {
 			res += n;
 		} else if (n <= 35) {
@@ -29,7 +29,7 @@ export function formDataArray(
 	fileName?: string
 ): number[] {
 	let dataString = "";
-	let isFile = !!fileName;
+	const isFile = !!fileName;
 
 	dataString += boundary + "\r\n";
 	dataString += 'Content-Disposition: form-data; name="' + name + '"';
@@ -42,14 +42,14 @@ export function formDataArray(
 		dataString += value;
 	}
 
-	var dataArray = [];
-	for (var i = 0; i < dataString.length; i++) {
+	let dataArray = [];
+	for (let i = 0; i < dataString.length; i++) {
 		// 取出文本的charCode（10进制）
 		dataArray.push(...dataString.utf8CodeAt(i));
 	}
 
 	if (isFile) {
-		let fileArray = new Uint8Array(value);
+		const fileArray = new Uint8Array(value);
 		dataArray = dataArray.concat(Array.prototype.slice.call(fileArray));
 	}
 	dataArray.push(..."\r".utf8CodeAt(0));
@@ -111,7 +111,7 @@ class FormData {
 			return;
 		}
 
-		let buffer = value ? value : this.fileManager.readFileSync(path);
+		const buffer = value ? value : this.fileManager.readFileSync(path);
 
 		this.isBuffer(buffer);
 
@@ -134,7 +134,7 @@ class FormData {
 	}
 
 	appendFile(name: string, path: string) {
-		let buffer = this.fileManager.readFileSync(path);
+		const buffer = this.fileManager.readFileSync(path);
 		this.isBuffer(buffer);
 		this.append(name, buffer, path);
 	}
@@ -144,16 +144,16 @@ class FormData {
 	}
 
 	convert(data: Data) {
-		let boundaryKey = FormData.boundary + randomString(); // 数据分割符，一般是随机的字符串
-		let prefix = "--";
-		let boundary = prefix + boundaryKey;
-		let endBoundary = boundary + prefix;
+		const boundaryKey = FormData.boundary + randomString(); // 数据分割符，一般是随机的字符串
+		const prefix = "--";
+		const boundary = prefix + boundaryKey;
+		const endBoundary = boundary + prefix;
 
 		let postArray: any[] = [];
 
-		//拼接参数
+		// 拼接参数
 		if (data && Object.prototype.toString.call(data) == "[object Object]") {
-			for (let key in data) {
+			for (const key in data) {
 				if ((data[key] as File).path) {
 					postArray = postArray.concat(
 						formDataArray(boundary, key, data[key], (data[key] as File).path)
@@ -164,9 +164,9 @@ class FormData {
 			}
 		}
 
-		//结尾
-		let endBoundaryArray = [];
-		for (var i = 0; i < endBoundary.length; i++) {
+		// 结尾
+		const endBoundaryArray = [];
+		for (let i = 0; i < endBoundary.length; i++) {
 			// 最后取出结束boundary的charCode
 			endBoundaryArray.push(...endBoundary.utf8CodeAt(i));
 		}

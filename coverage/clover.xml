@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1618832100220" clover="3.2.0">
-  <project timestamp="1618832100220" name="All files">
+<coverage generated="1618899897205" clover="3.2.0">
+  <project timestamp="1618899897205" name="All files">
     <metrics statements="94" coveredstatements="77" conditionals="31" coveredconditionals="18" methods="12" coveredmethods="11" elements="137" coveredelements="106" complexity="0" loc="94" ncloc="94" packages="1" files="1" classes="1"/>
     <file name="index.ts" path="/Users/jleemt/Desktop/dev/wx-formdata/src/index.ts">
       <metrics statements="94" coveredstatements="77" conditionals="31" coveredconditionals="18" methods="12" coveredmethods="11"/>
@@ -13,8 +13,8 @@
       <line num="14" count="34" type="cond" truecount="2" falsecount="0"/>
       <line num="15" count="6" type="stmt"/>
       <line num="16" count="28" type="cond" truecount="2" falsecount="0"/>
-      <line num="17" count="17" type="stmt"/>
-      <line num="19" count="11" type="stmt"/>
+      <line num="17" count="13" type="stmt"/>
+      <line num="19" count="15" type="stmt"/>
       <line num="22" count="2" type="stmt"/>
       <line num="25" count="1" type="stmt"/>
       <line num="31" count="3" type="stmt"/>

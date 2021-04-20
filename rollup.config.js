@@ -1,9 +1,3 @@
-import {
-	readdirSync,
-	writeFileSync,
-	existsSync
-} from 'fs-extra';
-
 import path from 'path';
 
 import babel from 'rollup-plugin-babel';
