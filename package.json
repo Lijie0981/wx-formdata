@@ -1,6 +1,6 @@
 {
   "name": "wechat-formdata",
-  "version": "0.1.1-beat.0",
+  "version": "0.1.1-beat.1",
   "description": "在微信小程序中调用formdata",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
