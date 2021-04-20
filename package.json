@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
     "clean": "rm -rf dist",
     "lint": "npx eslint ./src --cache --quiet",
     "prepublish": "yarn clean && yarn test && yarn lint && yarn build",
